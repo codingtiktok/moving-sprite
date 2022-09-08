@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pixel-size: 1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #96ffc1;
+    min-height: 100vh;
+ }
+
+.character {
+    width: calc(64px * var(--pixel-size));
+    height: calc(64px * var(--pixel-size));
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+}
+
+.character_spritesheet {
+    position: absolute;
+    /* animation: movingCharacter 1s steps(4) infinite; */
+    width: calc(256px * var(--pixel-size));
+}
+
+.character_shadow {
+    position: absolute;
+    width: calc(64px * var(--pixel-size));
+}
+
+.pixelart {
+    image-rendering: pixelated;
+}
+
+.face-down {
+    top: calc(0px * var(--pixel-size));
+}
+
+.face-left {
+    top: calc(-64px * var(--pixel-size));
+}
+
+.face-right {
+    top: calc(-128px * var(--pixel-size));
+}
+
+.face-up {
+    top: calc(-192px * var(--pixel-size));
+}
+
+@keyframes movingCharacter {
+    from {
+        transform: translate3d(0px, 0, 0);
+    } 
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
